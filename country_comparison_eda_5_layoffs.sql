@@ -4,7 +4,7 @@
 
 
 -- =====================================================
--- 5.1 Analysis of selected countries
+-- 5.1 Analysis of Selected Countries
 -- =====================================================
 
 
@@ -66,7 +66,7 @@ Transportation, Finance, and Retail sharing the top 5 similar to all observation
 
 
 -- =====================================================
--- 5.2 YoY comparison of selected countries' industries
+-- 5.2 YoY Comparison of Selected Countries' Industries
 -- =====================================================
 
 SELECT *
