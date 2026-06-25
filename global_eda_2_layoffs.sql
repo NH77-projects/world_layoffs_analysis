@@ -1,10 +1,10 @@
 -- ===========================================
--- 3. GLOBAL EDA
+-- 2. GLOBAL EDA
 -- ===========================================
 
 
 -- ===========================================
--- 3.1 Global Year-over-Year(YoY) overview
+-- 2.1 Global Year-over-Year(YoY) overview
 -- ===========================================
 
 SELECT EXTRACT(YEAR FROM date) AS year,
@@ -40,7 +40,7 @@ second-highest magnitude of layoffs in the dataset.
 
 
 -- ===========================================
--- 3.2 YoY averages
+-- 2.2 YoY averages
 -- ===========================================
 
 
