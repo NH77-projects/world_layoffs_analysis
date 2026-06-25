@@ -1,10 +1,10 @@
 -- =====================================================
--- 7. VIEWS AND FUNCTIONS
+-- 6. VIEWS AND FUNCTIONS
 -- =====================================================
 
 
 -- =====================================================
--- 7.1 YoY Industry Rank View
+-- 6.1 YoY Industry Rank View
 -- =====================================================
 
 CREATE OR REPLACE VIEW industry_year_rank_view AS
@@ -43,7 +43,7 @@ ORDER BY industry, period;
 
 
 -- =====================================================
--- 7.1 YoY industry Snapshot view
+-- 6.2 Industry Snapshot view
 -- =====================================================
 
 
@@ -53,7 +53,7 @@ FROM industry_tree ('2020-01-01', '2024-01-01');
 
 
 -- =====================================================
--- 7.2 Company Share Analysis Function
+-- 6.3 Company Share Analysis Function
 -- =====================================================
 
 
@@ -94,7 +94,7 @@ $$;
 
 
 -- =====================================================
--- 7.3 Industry Share Analysis Function
+-- 6.4 Industry Share Analysis Function
 -- =====================================================
 
 
@@ -139,7 +139,7 @@ $$;
 
 
 -- =====================================================
--- 7.4 Country Share Analysis Function
+-- 6.5 Country Share Analysis Function
 -- =====================================================
 
 
@@ -184,7 +184,7 @@ $$;
 
 
 -- =====================================================
--- 7.5 Selected Countries' Share Analysis Function
+-- 6.6 Selected Countries' Share Analysis Function
 -- =====================================================
 
 
@@ -288,4 +288,60 @@ joined_cte AS(
 		SUM(ind_num_events) OVER() AS ind_total_events
 	FROM joined_cte
 	ORDER BY global_laid_off DESC
+$$;
+
+
+-- ================================================================================
+-- 6.7 YoY companies with at least half of workforce laid off analysis function
+-- ================================================================================
+
+
+CREATE OR REPLACE FUNCTION company_at_least_half_lay_off_tree (start_date DATE, end_date DATE)
+RETURNS TABLE(
+company TEXT,
+industry TEXT,
+company_laid_off BIGINT,
+pct_laid_off NUMERIC,
+country TEXT
+)
+LANGUAGE SQL
+AS $$
+WITH base AS (
+	SELECT *
+	FROM layoffs_staging
+		WHERE date >= start_date
+		AND date < end_date
+		AND percentage_laid_off >= 0.5
+)
+	SELECT company, industry, total_laid_off AS company_laid_off, percentage_laid_off AS pct_laid_off, country
+	FROM base
+	ORDER BY company_laid_off DESC
+$$;
+
+
+-- ===========================================================================
+-- 6.8 YoY companies with full workforce laid off analysis function
+-- ===========================================================================
+
+
+CREATE OR REPLACE FUNCTION company_full_lay_off_tree (start_date DATE, end_date DATE)
+RETURNS TABLE(
+company TEXT,
+industry TEXT,
+country TEXT,
+total_laid_off BIGINT
+)
+LANGUAGE SQL
+AS $$
+WITH base AS (
+	SELECT *
+	FROM layoffs_staging
+		WHERE date >= start_date
+		AND date < end_date
+		AND percentage_laid_off = 1
+)
+	SELECT company, industry, country, SUM(total_laid_off) AS total_laid_off
+	FROM base
+	GROUP BY company, industry, country
+	ORDER BY total_laid_off DESC
 $$;
