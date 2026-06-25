@@ -8,6 +8,33 @@
 -- =====================================================
 
 
+WITH country_year AS (
+	SELECT
+		country,
+		EXTRACT(YEAR FROM date) AS year,
+		SUM(total_laid_off) AS layoffs
+	FROM layoffs_staging
+		WHERE total_laid_off IS NOT NULL
+	GROUP BY country, EXTRACT(YEAR FROM date)
+),
+lagged AS(
+	SELECT 
+		country,
+		year,
+		layoffs,
+		LAG(layoffs) OVER(PARTITION BY country ORDER BY year) AS prev_year_layoffs
+	FROM country_year
+)
+	SELECT
+		country,
+		year,
+		layoffs,
+		prev_year_layoffs,
+		layoffs - prev_year_layoffs AS absolute_change,
+		ROUND(100.0 * (layoffs - prev_year_layoffs) / NULLIF(prev_year_layoffs, 0), 2) AS pct_change
+	FROM lagged
+	ORDER BY country, year;
+
 SELECT *
 FROM country_tree('2020-01-01', '2024-01-01');
 
