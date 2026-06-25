@@ -1,10 +1,10 @@
 -- =====================================================
--- 6. COUNTRY COMPARISON EDA
+-- 5. COUNTRY COMPARISON EDA
 -- =====================================================
 
 
 -- =====================================================
--- 6.1 Analysis of selected countries
+-- 5.1 Analysis of selected countries
 -- =====================================================
 
 
@@ -37,7 +37,7 @@ ORDER BY 2 DESC; -- Share of India in global industry layoffs
 
 
 -- =====================================================
--- Key Finding
+-- Key Findings:
 -- =====================================================
 
 
@@ -66,7 +66,7 @@ Transportation, Finance, and Retail sharing the top 5 similar to all observation
 
 
 -- =====================================================
--- 6.2 YoY comparison of selected countries' industries
+-- 5.2 YoY comparison of selected countries' industries
 -- =====================================================
 
 SELECT *
@@ -86,7 +86,7 @@ FROM gl_us_ind_tree('2023-01-01', '2024-01-01');
 
 
 -- =====================================================
--- Key Finding
+-- Key Findings:
 -- =====================================================
 
 
