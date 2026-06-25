@@ -1,10 +1,11 @@
--- ========================
+-- ===========================================
 -- 3. GLOBAL EDA
--- ========================
+-- ===========================================
 
 
+-- ===========================================
 -- 3.1 Global Year-over-Year(YoY) overview
-
+-- ===========================================
 
 SELECT EXTRACT(YEAR FROM date) AS year,
 	SUM(total_laid_off) AS laid_off,
@@ -18,6 +19,7 @@ WHERE total_laid_off IS NOT NULL
 AND date IS NOT NULL
 GROUP BY year
 ORDER BY year;
+
 /* Throughout the observation period, a total of around 380K people were laid off, and 1,616 layoff events were recorded.
 
 The trend of both magnitude and frequency of layoffs followed a fluctuating pattern, decreasing between 2020–2021, rising in 
