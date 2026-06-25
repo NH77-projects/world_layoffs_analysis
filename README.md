@@ -31,10 +31,10 @@ The aim of the analysis was to answer:
 Tools Used
 
 PostgreSQL
-- [Data cleaning](sql/1_cleaning_layoffs.sql)
+- Data cleaning
 - Data transformation
 - Exploratory data analysis
-- Use of SQL techniques such as CTEs, functions, window functions, joins, unions, views
+- Use of [SQL techniques](sql/01_query_journal.sql) such as CTEs, functions, window functions, joins, unions, views
 
 Power BI
 - KPI
@@ -44,7 +44,7 @@ Power BI
 
 
 
-Data cleaning
+[Data cleaning and transformation](sql/1_cleaning_layoffs.sql)
 
 Before the analysis the data was cleaned and standardized by:
 - Standardization of columns
@@ -54,21 +54,21 @@ Before the analysis the data was cleaned and standardized by:
 
 
 
-Exploratory Data Analysis
+[Exploratory Data Analysis](sql/)
 
 Based on the scope, several analyses were conducted.
 
-Global analysis
+[Global analysis](sql/2_global_eda_layoffs.sql)
 - Changes in total layoffs and number of layoff events throughout the years
 - Average layoffs over time
 - Distribution of global layoffs across industries and countries
 
-Industry Analysis
+[Industry Analysis](sql/3_industry_eda_layoffs.sql)
 - Industries with highest magnitude and frequency of layoffs
 - YoY trends of industries layoffs
 - Identification of trend patterns of layoffs over the years
 
-Country analysis
+[Country analysis](sql/4_country_eda_layoffs.sql)
 - Countries with the highest layoffs
 - Countries' dominance in global layoffs on YoY basis
 - Comparison of global, United States, and India layoffs
@@ -80,7 +80,7 @@ In-Depth Analysis of 2020
 
 
 
-Dashboard Overview
+[Dashboard Overview](PowerBI/)
 
 The Power BI dashboard consists of three interactive pages:
 
