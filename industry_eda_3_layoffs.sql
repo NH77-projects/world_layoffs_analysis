@@ -4,7 +4,7 @@
 
 
 -- =====================================================
--- 3.1 Yearly change in industry analysis
+-- 3.1 Yearly Change in Industry Analysis
 -- =====================================================
 
 
