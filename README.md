@@ -85,11 +85,11 @@ Dashboard Overview
 The Power BI dashboard consists of three interactive pages:
 
 
-### Global Layoffs KPI
+### 1. Global Layoffs KPI
 ![Overview Dashboard](PowerBI/dashboard_1.png)
 
 
-1. Global Layoffs KPI
+Global Layoffs KPI
 Provides overview of global metrics of the dataset, which are:
 - Total layoffs and layoffs across top 5 industries
 - Layoffs by year
@@ -100,21 +100,21 @@ Provides overview of global metrics of the dataset, which are:
 
 
 
-### Country Analysis
+### 2. Country Analysis
 ![Country Analysis](PowerBI/dashboard_2.png)
 
 
-2. Country Analysis
+Country Analysis
 Includes:
 - Share of layoffs and number of layoffs across countries
 - Comparison of layoffs and number of layoff events across industries with global vs United States vs India 
 
 
-### Year-over-Year Analysis
+### 3. Year-over-Year Analysis
 ![Year-over-Year Analysis](PowerBI/dashboard_3.png)
 
 
-3. Year-over-Year Analysis
+Year-over-Year Analysis
 Shows:
 - Global layoffs of top 5 industries over time
 - Global number of layoff events across top 5 industries over periods
