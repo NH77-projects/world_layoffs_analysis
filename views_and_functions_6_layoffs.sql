@@ -43,7 +43,7 @@ ORDER BY industry, period;
 
 
 -- =====================================================
--- 6.2 Industry Snapshot view
+-- 6.2 Industry Snapshot View
 -- =====================================================
 
 
@@ -292,7 +292,7 @@ $$;
 
 
 -- ================================================================================
--- 6.7 YoY companies with at least half of workforce laid off analysis function
+-- 6.7 YoY Companies with at least Half of Workforce Laid Off Analysis Function
 -- ================================================================================
 
 
@@ -320,7 +320,7 @@ $$;
 
 
 -- ===========================================================================
--- 6.8 YoY companies with full workforce laid off analysis function
+-- 6.8 YoY Companies with Full Workforce Laid Off Analysis Function
 -- ===========================================================================
 
 
