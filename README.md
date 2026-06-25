@@ -73,7 +73,7 @@ Based on the scope, several analyses were conducted.
 - Countries' dominance in global layoffs on YoY basis
 - Comparison of global, United States, and India layoffs
 
-In-Depth Analysis of 2020
+[In-Depth Analysis of 2020](sql/7_2020_eda_layoffs.sql)
 - Company analysis
 - Industry analysis
 - Country analysis
