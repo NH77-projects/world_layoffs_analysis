@@ -4,7 +4,7 @@
 
 
 -- ===========================================
--- 2.1 Global Year-over-Year(YoY) overview
+-- 2.1 Global Year-over-Year(YoY) Overview
 -- ===========================================
 
 SELECT EXTRACT(YEAR FROM date) AS year,
@@ -40,7 +40,7 @@ second-highest magnitude of layoffs in the dataset.
 
 
 -- ===========================================
--- 2.2 YoY averages
+-- 2.2 YoY Averages
 -- ===========================================
 
 
