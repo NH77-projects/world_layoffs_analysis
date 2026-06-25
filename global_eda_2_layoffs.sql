@@ -38,3 +38,14 @@ that fewer layoff events occurred, but each event affected a larger number of em
 second-highest magnitude of layoffs in the dataset.  
 */
 
+
+SELECT 
+	EXTRACT(YEAR FROM date) AS year,
+	SUM(total_laid_off) AS layoffs,
+	SUM(total_laid_off) / 12 AS monthly_avg_layoffs,
+	ROUND(SUM(SUM(total_laid_off)) OVER() / 4, 2) AS total_avg_layoffs
+FROM layoffs_staging
+WHERE total_laid_off IS NOT NULL
+AND date IS NOT NULL
+GROUP BY year
+ORDER BY year; -- AVG layoffs per each year, and total avg layoffs
